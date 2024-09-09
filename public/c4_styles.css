@@ -1,0 +1,298 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Mode Toggle Button Styling */
+#mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #61dafb;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#mode-toggle:hover {
+    background-color: #5a9bd4;
+}
+
+/* Start Screen Styling */
+#start-screen {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #61dafb;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+#start-screen h1 {
+    color: #333333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#player-selection {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+#player-selection div {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+#player-selection div label {
+    display: block;
+    margin: 5px 0;
+}
+
+/* Start Button Styling */
+#start-screen button {
+    background-color: #61dafb;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#start-screen button:hover {
+    background-color: #5a9bd4;
+}
+
+/* Game Screen Styling */
+#game-screen {
+    text-align: center;
+}
+
+/* Current Player and Message Sections */
+#current-player {
+    margin-bottom: 10px;
+}
+
+#currentPlayer {
+    font-size: 1.5rem;
+    color: #333333;
+}
+
+#message {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    color: #ff3333;
+}
+
+/* AI Move Buttons Styling */
+#aiButtons {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+#aiButtons button {
+    background-color: #61dafb;
+    color: #ffffff;
+    border: none;
+    padding: 8px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 5px;
+}
+
+#aiButtons button:hover {
+    background-color: #5a9bd4;
+}
+
+/* Auto-Click Checkbox Styling */
+#autoClickCheckbox {
+    margin: 15px 0;
+}
+
+/* Scoreboard Styling */
+#scoreboard {
+    margin: 15px 0;
+    font-size: 1.2rem;
+}
+
+#scoreboard p {
+    margin: 5px 0;
+}
+
+#drawCounter {
+    margin: 10px 0;
+}
+
+/* Reset Button Styling */
+#resetButton {
+    background-color: #ff3333;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 10px;
+}
+
+#resetButton:hover {
+    background-color: #e02b2b;
+}
+
+/* Board Container Styling */
+#board-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Game Board Styling */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(6, 70px); /* Adjusted for a 6x6 grid */
+    grid-template-rows: repeat(6, 70px); /* Uniform row height for better spacing */
+    gap: 5px; /* Gap between cells */
+    border: 2px solid #333333;
+    background-color: #ffffff; /* Background color for the board */
+    padding: 5px; /* Optional: Add padding to ensure no cells touch the border */
+}
+
+/* Cell Styling */
+.cell {
+    width: 70px; /* Match cell width with column width */
+    height: 70px; /* Match cell height with row height */
+    border: 1px solid #333333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, border-color 0.3s;
+    background-color: #ffffff; /* Default background color for cells */
+}
+
+
+/* Red and Yellow Pieces Styling */
+.cell.red {
+    background-color: #ff0000;
+}
+
+.cell.yellow {
+    background-color: #ffff00;
+}
+
+/* Full Column Styling */
+.column.full .cell {
+    pointer-events: none;
+}
+
+
+
+
+
+
+
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #282c34;
+    color: #e0e0e0;
+}
+
+/* Start Screen */
+body.dark-mode #start-screen {
+    background-color: #333333;
+    border-color: #61dafb;
+    color: #e0e0e0; /* Ensure text is visible */
+}
+
+body.dark-mode #start-screen h1 {
+    color: #ffffff; /* Bright text for headings */
+}
+
+body.dark-mode #player-selection div {
+    background-color: #444444;
+    border-color: #61dafb;
+    color: #e0e0e0; /* Ensure text is visible */
+}
+
+body.dark-mode #player-selection div h2 {
+    color: #ffffff; /* Bright text for player headings */
+}
+
+body.dark-mode #player-selection div label {
+    color: #e0e0e0; /* Ensure text is visible */
+}
+
+/* Buttons */
+body.dark-mode #start-screen button,
+body.dark-mode #aiButtons button {
+    background-color: #979797;
+    color: #585858;
+}
+
+body.dark-mode #aiButtons button:hover {
+    background-color: #333;
+}
+
+/* Reset Button */
+body.dark-mode #resetButton {
+    background-color: #ff6666;
+}
+
+/* Game Board */
+body.dark-mode #game-board {
+    background-color: #444444;
+}
+
+body.dark-mode .cell {
+    background-color: #424242; /* Dark background for cells */
+    border: 1px solid #555; /* Border color */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+body.dark-mode .cell.red {
+    background-color: #d32f2f; /* Dark red for red pieces */
+}
+
+body.dark-mode .cell.yellow {
+    background-color: #fbc02d; /* Dark yellow for yellow pieces */
+}
+
+/* Mode Toggle */
+body.dark-mode #mode-toggle {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+}
+
+body.dark-mode #mode-toggle:hover {
+    background-color: #333;
+}
+
+body.dark-mode #currentPlayer {
+    color: #d6d6d6; /* A color that stands out against dark background */
+}

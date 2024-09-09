@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="/ttt_styles.css">
+</head>
+<body>
+    <!-- Mode Toggle -->
+    <div class="mode-toggle-container">
+        <button id="mode-toggle">Switch to Dark Mode</button>
+    </div>
+
+    <!-- Start Screen -->
+    <div id="start-screen">
+        <h1>Choose Your Game Mode</h1>
+        <div id="player-selection">
+            <div>
+                <h2>Player X</h2>
+                <label for="playerXMe">
+                    <input type="radio" id="playerXMe" name="playerX" value="me" checked>
+                    Me
+                </label>
+                <label for="playerXRuleBased">
+                    <input type="radio" id="playerXRuleBased" name="playerX" value="rule-based">
+                    Rule-Based AI
+                </label>
+                <label for="playerXQLearning">
+                    <input type="radio" id="playerXQLearning" name="playerX" value="q-learning">
+                    Q-Learning AI
+                </label>
+            </div>
+            <div>
+                <h2>Player O</h2>
+                <label for="playerOMe">
+                    <input type="radio" id="playerOMe" name="playerO" value="me" checked>
+                    Me
+                </label>
+                <label for="playerORuleBased">
+                    <input type="radio" id="playerORuleBased" name="playerO" value="rule-based">
+                    Rule-Based AI
+                </label>
+                <label for="playerOQLearning">
+                    <input type="radio" id="playerOQLearning" name="playerO" value="q-learning">
+                    Q-Learning AI
+                </label>
+            </div>
+        </div>
+        <button onclick="startGame()">Start Game</button>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" style="display: none;">
+        <!-- Current Player Section -->
+        <div id="current-player">
+            <h2>Current Player:</h2>
+            <p id="currentPlayer">Player X</p>
+        </div>
+
+        <!-- Message Section -->
+        <div id="message"></div>
+
+        <!-- AI Move Buttons -->
+        <div id="aiButtons">
+            <button id="aiMoveButton" onclick="makeAIMove('rule-based')">Make Rule-Based AI Move</button>
+            <button id="aiMoveButtonQ" onclick="makeAIMove('q-learning')">Make Q-Learning AI Move</button>
+        </div>
+
+        <!-- Auto-Click Control -->
+        <input type="checkbox" id="autoClickCheckbox" /> Auto Click
+
+        <!-- Scoreboard -->
+        <div id="scoreboard">
+            <p>Player X: <span id="playerXScore">0</span></p>
+            <p>Player O: <span id="playerOScore">0</span></p>
+            <div id="drawCounter">Draws: 0</div>
+        </div>
+
+        <!-- Game Controls -->
+        <button id="resetButton" onclick="resetGame()">Clear Board</button>
+
+        <!-- Game Board Container -->
+        <div id="board-container">
+            <div id="game-board">
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+                <div class="cell"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/tictactoe.js"></script>
+</body>
+</html>

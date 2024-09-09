@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect 4</title>
+    <link id="theme-stylesheet" rel="stylesheet" href="/c4_styles.css">
+</head>
+<body>
+    <!-- Mode Toggle -->
+    <div class="mode-toggle-container">
+        <button id="mode-toggle">Switch to Dark Mode</button>
+    </div>
+
+    <!-- Start Screen -->
+    <div id="start-screen">
+        <h1>Choose Your Game Mode</h1>
+        <div id="player-selection">
+            <div>
+                <h2>Player Red</h2>
+                <label for="playerRedMe">
+                    <input type="radio" id="playerRedMe" name="playerRed" value="me" checked>
+                    Me
+                </label>
+                <label for="playerRedRuleBased">
+                    <input type="radio" id="playerRedRuleBased" name="playerRed" value="rule-based">
+                    Rule-Based AI
+                </label>
+                <label for="playerRedQLearning">
+                    <input type="radio" id="playerRedQLearning" name="playerRed" value="q-learning">
+                    Q-Learning AI
+                </label>
+            </div>
+            <div>
+                <h2>Player Yellow</h2>
+                <label for="playerYellowMe">
+                    <input type="radio" id="playerYellowMe" name="playerYellow" value="me" checked>
+                    Me
+                </label>
+                <label for="playerYellowRuleBased">
+                    <input type="radio" id="playerYellowRuleBased" name="playerYellow" value="rule-based">
+                    Rule-Based AI
+                </label>
+                <label for="playerYellowQLearning">
+                    <input type="radio" id="playerYellowQLearning" name="playerYellow" value="q-learning">
+                    Q-Learning AI
+                </label>
+            </div>
+        </div>
+        <button onclick="startGame()">Start Game</button>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" style="display: none;">
+        <!-- Current Player Section -->
+        <div id="current-player">
+            <h2>Current Player:</h2>
+            <p id="currentPlayer">Player Red</p>
+        </div>
+
+        <!-- Message Section -->
+        <div id="message"></div>
+
+        <!-- AI Move Buttons -->
+        <div id="aiButtons">
+            <button id="aiMoveButton" onclick="makeAIMove('rule-based')">Make Rule-Based AI Move</button>
+            <button id="aiMoveButtonQ" onclick="makeAIMove('q-learning')">Make Q-Learning AI Move</button>
+        </div>
+
+        <!-- Auto-Click Control -->
+        <input type="checkbox" id="autoClickCheckbox" /> Auto Click
+
+        <!-- Scoreboard -->
+        <div id="scoreboard">
+            <p>Player Red: <span id="playerRedScore">0</span></p>
+            <p>Player Yellow: <span id="playerYellowScore">0</span></p>
+            <div id="drawCounter">Draws: 0</div>
+        </div>
+
+        <!-- Game Controls -->
+        <button id="resetButton" onclick="resetGame()">Clear Board</button>
+
+        <!-- Game Board Container -->
+        <div id="board-container">
+            <div id="game-board">
+                <!-- Generate cells dynamically with JavaScript -->
+            </div>
+        </div>
+    </div>
+    <script src="/connect4.js"></script>
+</body>
+</html>

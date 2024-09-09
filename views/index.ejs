@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Selection</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div class="mode-toggle-container">
+        <button id="mode-toggle">Switch to Dark Mode</button>
+    </div>
+    <h1>Welcome to the Game Hub</h1>
+    <div class="button-container">
+        <button onclick="window.location.href='/connect4'">Play Connect 4</button>
+        <button onclick="window.location.href='/tictactoe'">Play Tic Tac Toe</button>
+    </div>
+    <div id="game-board"></div>
+
+    <!-- JavaScript for toggle functionality -->
+    <script>
+        // Check localStorage for dark mode preference
+        document.addEventListener("DOMContentLoaded", function() {
+            if (localStorage.getItem('darkMode') === 'enabled') {
+                document.body.classList.add('dark-mode');
+                document.getElementById('mode-toggle').textContent = 'Switch to Light Mode';
+            }
+        });
+
+        // Add event listener for the dark mode toggle button
+        document.getElementById('mode-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('darkMode', 'enabled');
+                this.textContent = 'Switch to Light Mode';
+            } else {
+                localStorage.setItem('darkMode', 'disabled');
+                this.textContent = 'Switch to Dark Mode';
+            }
+        });
+    </script>
+</body>
+</html>
